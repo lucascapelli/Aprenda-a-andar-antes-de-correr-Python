@@ -1,0 +1,3 @@
+Olá, Lucas!
+Este é um teste de leitura de arquivo.
+Boa prática!

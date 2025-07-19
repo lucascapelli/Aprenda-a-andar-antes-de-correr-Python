@@ -1,0 +1,6 @@
+Ana,Matemática,8.5  
+Bruno,Português,7.0  
+Ana,Português,9.0  
+Bruno,Matemática,6.5  
+Carlos,Matemática,7.5  
+Carlos,Português,8.0  
