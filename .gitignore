@@ -1,0 +1,16 @@
+# IDE / editor
+.vscode/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Django / banco de dados local
+*.sqlite3
+db.sqlite3
+
+# Arquivos de exercícios que não precisam subir
+*.zip
+*.txt
