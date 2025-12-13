@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!--
+As tags do Django Template são instruções de renderização, não HTML.
+{% %} → estruturas de controle (if, for, url)
+{{ }} → exibição de dados já processados pela view
+
+A view prepara os dados no backend e o template
+apenas decide COMO mostrar esses dados.
+O navegador recebe somente HTML final.
+-->
+
+<body>
+    <h1>Lista de Pessoas Cadastradas</h1>
+
+    <!-- Se a view enviou alguma pessoa no contexto -->
+    {% if pessoas %}
+    <ul>
+        <!-- Para cada pessoa enviada pela view -->
+        {% for pessoa in pessoas %}
+        <!-- Exibe os dados do objeto -->
+        <li>
+            {{ pessoa.nome }} - {{ pessoa.idade }} anos - {{ pessoa.get_genero_display }}
+        </li>
+        {% endfor %}
+    </ul>
+
+    <!-- Se não existir nenhuma pessoa -->
+    {% else %}
+        <p>Nenhuma pessoa cadastrada ainda</p>
+    {% endif %}
+</body>
+
+</html>
