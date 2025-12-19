@@ -21,7 +21,7 @@ para o aprendizado de backend, banco de dados e MVC.
 - `exercicios de leitura de arquivo em python/`
   → Leitura e manipulação de arquivos `.txt`.
 
-- `lista de exercicios Orientação Objeto em Python/`
+- `ExerciciosPOO/`
   → Classes, objetos, métodos e encapsulamento.
 
 - `exercicios_basicos_de_crud_django_e_restframeworkapi/`
