@@ -17,3 +17,6 @@ db.sqlite3
 
 #pasta venv do django
 .venv/
+
+# pasta venv dos crud sem django
+venv/

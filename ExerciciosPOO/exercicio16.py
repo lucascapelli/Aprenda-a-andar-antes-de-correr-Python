@@ -1,20 +1,54 @@
+'''🧩 Exercício – Classe Carro
+
+Crie uma classe chamada Carro que represente um veículo.
+
+A classe deve possuir:
+
+🔹 Atributos
+
+modelo: modelo do carro
+
+combustivel: quantidade de combustível disponível (em litros)
+
+consumo: quantidade de combustível que será consumida na viagem
+
+🔹 Método
+
+dirigir():
+
+Solicita ao usuário uma distância (em quilômetros) que será percorrida
+
+Calcula o consumo do carro considerando que ele faz 16 km por litro
+
+Verifica se a quantidade de combustível é suficiente para realizar a viagem
+
+Exibe:
+
+Se for suficiente: quanto será consumido e quanto sobrará
+
+Se não for suficiente: quanto falta de combustível para concluir a viagem
+
+🔹 Instanciação
+
+Crie um objeto da classe Carro e chame o método dirigir() para testar o funcionamento.'''
+
 class Carro:
     def __init__(self,modelo,combustivel,consumo):
         self.modelo = modelo
         self.combustivel = combustivel
         self.consumo = consumo
 
-    def dirigir (self):
-        distancia = int(input(f"digite uma distância em kms que você irá percorrer com o seu {self.modelo}"))
-        self.consumo = distancia / 16
-        sobracombustivel = self.combustivel - self.consumo
-        faltacombustivel = self.consumo - self.combustivel
-        if self.combustivel>= self.consumo:
-            return (f"você dono do carro {self.modelo} tem combustivel o suficiente para continuar a viagem e o seu consumo vai ser de {self.consumo} te sobrando {sobracombustivel} lts")
+
+    def dirigir(self):
+        distancia = float(input('digite a distancia em quilomêtros da viagem:\n'))
+        gastocombustivel = distancia / self.consumo
+        if gastocombustivel >= self.combustivel:
+            gastocombustivel -= self.combustivel
+            return f'não há combustivel o suficiente no {self.modelo} para prosseguir a viajem\n faltará {gastocombustivel} litros de gasolina'
         else:
-            return (f"você dono do carro {self.modelo} não tem combustivel o suficiente para continuar a viagem, pois o consumo de combustivel é de {self.consumo} lts e você só tem {self.combustivel} lts, ainda te faltam {faltacombustivel} lts para essa viagem")
+            self.combustivel -= gastocombustivel
+            return f'o carro {self.modelo} tem gasolina o suficiente para completar a viagem e ainda sobrará {self.combustivel} litros'
 
-fusca = Carro("volkswagen", 11 )
-fusca.dirigir()
-
-input()
+        
+fiat = Carro('uno',55,16)
+print(fiat.dirigir())
